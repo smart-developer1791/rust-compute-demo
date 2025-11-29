@@ -1,0 +1,35 @@
+# =========================
+# Package metadata section
+# =========================
+
+[package]
+# Name of the Rust project. This is the identifier used by Cargo and crates.io.
+name = "rust-compute-demo"
+
+# Version of the project following semantic versioning (major.minor.patch).
+version = "0.1.0"
+
+# Edition of Rust to use for this project. Edition 2021 enables latest language features
+# and improvements compared to older editions (2018, 2015).
+edition = "2021"
+
+# =========================
+# Dependencies section
+# =========================
+
+[dependencies]
+# Axum is a lightweight web framework for building async HTTP services in Rust.
+# Version 0.7 is specified to ensure compatibility with our code.
+axum = "0.7"
+
+# Tokio is the asynchronous runtime for Rust, required for async/await.
+# The "full" feature enables all Tokio components (TCP, time, macros, etc.).
+tokio = { version = "1", features = ["full"] }
+
+# Rand is a library for generating random numbers. Used in the compute handler
+# to create vectors of random integers for processing.
+rand = "0.8"
+
+# Rayon provides easy-to-use data parallelism for Rust collections.
+# Used to parallelize computation over large arrays for faster processing.
+rayon = "1.10"
